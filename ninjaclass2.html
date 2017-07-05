@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Class II</title>
+    </head>
+    <body>
+        <script>
+            function Ninja(name) {
+                var self = this;
+                this.name = name;
+                this.health = 100;
+
+                var speed = 3;
+                var strength = 3;
+
+                this.sayName = function() {
+                    console.log("My ninja name is " + this.name +"!")
+                    return this
+                }
+                // say name ^
+
+                this.showStats = function() {
+                    console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + speed + ", Strength: " + strength)
+                    return this
+                }
+                // show stats ^
+
+                this.drinkSake = function() {
+                    this.health += 10;
+                    console.log("SAKE BOMB!")
+                }
+                // drink sake ^
+
+                this.punch = function(ninja) {
+                    if (ninja instanceof Ninja) {
+                        ninja.health -= 5
+                        console.log(ninja.name + " was ninja punched by " + this.name + " and lost 5 health")
+                    }
+                }
+                // punch ^
+
+                var findStrength = function() {
+                    return strength;
+                }
+                // find strength ^
+
+                this.kick = function(ninja) {
+                    if (ninja instanceof Ninja) {
+                        strength = findStrength()
+                        ninja.health -= (5 * strength) // subtract 5 times each point of strength
+                        console.log(ninja.name + " was ninja kicked by " + this.name + " and lost 15 health")
+                    }
+                }
+                // kick ^
+            }
+            var Ninja1 = new Ninja("Subzero")
+            var Ninja2 = new Ninja("Scorpion")
+            Ninja1.sayName()
+            Ninja2.sayName()
+            Ninja1.showStats()
+            Ninja2.showStats()
+            Ninja1.drinkSake()
+            Ninja2.drinkSake()
+            Ninja1.punch(Ninja2)
+            Ninja2.kick(Ninja1)
+            Ninja1.kick(Ninja2)
+            Ninja1.showStats()
+            Ninja2.showStats()
+        </script>
+    </body>
+</html>
