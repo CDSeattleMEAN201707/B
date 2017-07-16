@@ -1,0 +1,17 @@
+<h1>
+    {{title}}
+</h1>
+
+<div>
+
+    <button [ngClass]="{'on': lastTimeZone === 'PST'}" (click)='changeTime("PST")'>PST</button>
+    <button [ngClass]="{'on': lastTimeZone === 'MST'}" (click)='changeTime("MST")'>MST</button>
+    <button [ngClass]="{'on': lastTimeZone === 'CST'}" (click)='changeTime("CST")'>CST</button>
+    <button [ngClass]="{'on': lastTimeZone === 'EST'}" (click)='changeTime("EST")'>EST</button>
+    <button (click)='changeTime()'>// CLEAR</button>
+
+
+    <h2>{{ time | date:'medium'}}</h2>
+    <p>///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</p>
+
+</div>
