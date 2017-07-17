@@ -1,0 +1,18 @@
+* {
+    font-family: helvetica;
+}
+
+#title {
+    font-size: 75px;
+    position: relative;
+    right: 30px;
+    bottom: 30px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 970px;
+    height: auto;
+    position: relative;
+    bottom: 100px;
+}
