@@ -1,0 +1,99 @@
+* {
+    font-family: helvetica;
+}
+
+h1 {
+    font-size: 75px;
+    position: relative;
+    right: 30px;
+    bottom: 30px;
+}
+
+h2 {
+    font-size: 15px;
+    position: relative;
+    bottom: 60px;
+}
+
+
+input[type=text] {
+    width: 300px;
+    height: 35px;
+    padding-left: 10px;
+    margin: 5px;
+}
+
+input[type=password] {
+    width: 300px;
+    height: 35px;
+    padding-left: 10px;
+    margin: 5px;
+}
+
+select {
+    width: 315px;
+    height: 35px;
+    padding-left: 10px;
+    margin: 5px;
+    color: #000;
+}
+
+input[type=submit] {
+    background-color: #eee;
+    color: #000;
+    border: 1px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+    display: inline;
+    width: 315px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.success {
+    width: 315px;
+    height: 75px;
+    position: relative;
+    left: 5px;
+    bottom: 40px;
+}
+
+.align {
+    display: inline-flex;
+}
+
+.valid {
+    position: relative;
+    top: 15px;
+    left: 10px;
+}
+
+.invalid {
+    position: relative;
+    top: 15px;
+    left: 10px;
+}
+
+.feeling {
+    color: #c15d5d;
+    font-weight: bold;
+    position: relative;
+    left: 140px;
+}
+
+.ng-invalid {  }
+.ng-valid { }
+.ng-untouched { }
+.ng-touched { }
+.ng-dirty { }
+.ng-pristine {}
+
+.valid {
+    color: #000;
+    font-weight: bold;
+}
+.invalid {
+    color: #c15d5d;
+    font-weight: bold;
+}

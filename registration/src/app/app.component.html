@@ -1,0 +1,187 @@
+
+<h1>
+    {{title}}
+</h1>
+
+<h2>PLEASE FILL OUT THE FORM TO REGISTER</h2>
+
+<div [hidden]="!isSuccessful" class="success">
+    <p>Thank you for registering with us {{user.first_name}}.
+    We just sent you a confirmation email at {{user.email}}, and we will send all mail to {{user.address}}, {{user.city}}, {{user.state}}.</p>
+    <p><b>Have a wonderful day!</b></p>
+</div>
+
+<div class="wrapper">
+    <form (submit)="onSubmit()" #userForm="ngForm" id='ngForm' name='myForm' >
+
+        <div class='form-block'>
+
+            <div class ="align">
+                <input
+                    placeholder="First Name"
+                    type="text"
+                    name="first_name"
+                    required
+                    minlength="4"
+                    maxlength="24"
+                    [(ngModel)]="user.first_name"
+                    #first_name='ngModel'
+                />
+                <div *ngIf="!first_name.valid && first_name.dirty" class='invalid'>First name is required</div>
+                <div *ngIf="first_name.valid" class='valid'>First name is valid!</div>
+            </div>
+
+        </div>
+
+        <div class='form-block'>
+
+            <div class ="align">
+                <input
+                    placeholder="Last Name"
+                    type="text"
+                    name="last_name"
+                    required
+                    minlength="4"
+                    maxlength="24"
+                    [(ngModel)]="user.last_name"
+                    #last_name='ngModel'
+                />
+                <div *ngIf="!last_name.valid && last_name.dirty" class='invalid'>Last name is required</div>
+                <div *ngIf="last_name.valid" class='valid'>Last name is valid!</div>
+            </div>
+
+        </div>
+
+        <div class='form-block'>
+
+            <div class ="align">
+                <input
+                    placeholder="Email"
+                    type='text'
+                    name='email'
+                    required
+                    minlength="4"
+                    maxlength="24"
+                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                    [(ngModel)]="user.email"
+                    #email="ngModel"
+                />
+
+                <div *ngIf="!email.valid && email.dirty" class='invalid'>Email must be valid</div>
+                <div *ngIf="email.valid" class='valid'>Email name is valid!</div>
+            </div>
+
+        </div>
+
+        <div class='form-block'>
+
+            <div class ="align">
+                <input
+                    placeholder="Password"
+                    type="password"
+                    name="password"
+                    required
+                    minlength="8"
+                    maxlength="24"
+                    pattern="^([a-zA-Z0-9@*#]{8,15})$"
+                    [(ngModel)]="user.password"
+                    #password='ngModel'
+                />
+
+                <div *ngIf="!password.valid && password.dirty" class='invalid'>Password must be at least 8 characters long</div>
+                <div *ngIf="password.valid" class='valid'>Password is valid!</div>
+            </div>
+
+        </div>
+
+        <div class="form-block">
+
+            <div class ="align">
+                <input
+                placeholder="Confirm Password"
+                type="password"
+                name="confirmPassword"
+                [(ngModel)]="user.confirmPassword"
+                #confirmPassword="ngModel"
+                validateEqual="password">
+
+                <div class="invalid" *ngIf='!confirmPassword.valid && (confirmPassword.dirty || confirmPassword.touched)'>Password confirmation must match</div>
+            </div>
+
+        </div>
+
+        <div class='form-block'>
+
+            <div class ="align">
+                <input
+                    placeholder="Address"
+                    type='text'
+                    name='address'
+                    required
+                    minlength="4"
+                    maxlength="24"
+                    [(ngModel)]="user.address"
+                    #address="ngModel"
+                />
+
+                <div *ngIf="!address.valid && address.dirty" class='invalid'>Address is required</div>
+                <div *ngIf="address.valid" class='valid'>Address is valid!</div>
+            </div>
+
+        </div>
+
+        <div class='form-block'>
+
+            <div class ="align">
+                <input
+                    placeholder="City"
+                    type='text'
+                    name='city'
+                    required
+                    minlength="4"
+                    maxlength="24"
+                    [(ngModel)]="user.city"
+                    #city="ngModel"
+                />
+
+                <div *ngIf="!city.valid && city.dirty" class='invalid'>City is required</div>
+                <div *ngIf="city.valid" class='valid'>City is valid!</div>
+            </div>
+
+        </div>
+
+        <div class="form-block">
+
+            <div class ="align">
+                <select
+                    placeholder="State"
+                    name="state"
+                    required
+                    [(ngModel)]="user.state"
+                    #state="ngModel"
+                    class="form-control">
+
+                    <option value="State"></option>
+                    <option *ngFor="let s of states" [value]="s">{{s}}</option>
+
+                </select>
+            </div>
+
+        </div>
+        <br>
+        <div class ="align">
+            <br>
+            <label>Feeling Lucky?:</label>
+            <br><br>
+
+            <input type="radio" name="lucky" value="true" [(ngModel)]="user.lucky" #lucky="ngModel" required>Yes
+            <input type="radio" name="lucky" value="false" [(ngModel)]="user.lucky" #lucky="ngModel" required>No
+            <div class="feeling" *ngIf='!lucky.valid && city.dirty'>Choosing how you feel is required!</div>
+            <br><br>
+        </div>
+        <br>
+
+        <input type='submit' [disabled]="!userForm.form.valid" value="REGISTER">
+
+    </form>
+</div>
