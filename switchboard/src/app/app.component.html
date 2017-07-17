@@ -1,0 +1,31 @@
+
+<h1>
+    {{title}}
+</h1>
+
+<h2>// Push buttons to turn ON / OFF</h2>
+
+<div class="wrapper">
+    <div>
+        <div class="switches" *ngFor="let switch of switches; let idx = index">
+
+            <button
+            *ngIf='switch'
+            [ngClass]="{'on': switch}"
+            (click)='onSwitch(idx)'>
+            // ON //
+            </button>
+
+            <button
+            *ngIf='!switch'
+            [ngClass]="{'on': switch}"
+            (click)='onSwitch(idx)'>
+            // OFF //
+            </button>
+
+        </div>
+    </div>
+
+    <p>//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</p>
+
+</div>
