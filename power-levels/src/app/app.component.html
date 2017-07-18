@@ -1,0 +1,25 @@
+<h1>
+    {{title}}
+</h1>
+
+<div class="wrapper">
+
+    <div class="left">
+        <div>
+            <h2>Adjust Incoming Power Level: </h2>
+            <input type="number" max="100" min="0" [(ngModel)]="power">
+        </div>
+        <img src="https://s-media-cache-ak0.pinimg.com/originals/d4/49/37/d44937b62b85771809ac74e541d55e5f.jpg" id="goku" alt="goku">
+    </div>
+
+    <div class="right">
+        <div>
+            <app-human [power]="power" class='box'></app-human>
+            <app-saiyan [power]="power" class='box'></app-saiyan>
+            <app-super-saiyan [power]="power" class='box'></app-super-saiyan>
+            <app-super-saiyan-two [power]="power" class='box'></app-super-saiyan-two>
+            <app-super-saiyan-three [power]="power" class='box'></app-super-saiyan-three>
+            <app-super-saiyan-four [power]="power" class='box'></app-super-saiyan-four>
+        </div>
+    </div>
+</div>
