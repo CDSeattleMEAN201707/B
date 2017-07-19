@@ -1,0 +1,13 @@
+
+<h1>
+    {{title}}
+</h1>
+
+<div class='wrapper'>
+    <div class='form'>
+        <app-create-quote [quotes]="quotes" (createQuoteEvent)="createQuote($event)"></app-create-quote>
+    </div>
+    <div class='list'>
+        <app-list-quote [quotes]="quotes" (deleteQuoteEvent)="deleteQuote($event)"></app-list-quote>
+    </div>
+</div>

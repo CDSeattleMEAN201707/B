@@ -1,0 +1,33 @@
+
+input {
+    width: 300px;
+    display: inline-block;
+}
+
+textarea {
+    width: 300px;
+    height: 150px;
+}
+
+div.validations {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    left: 330px;
+    bottom: 220px;
+}
+
+div.validations span {
+    display: block;
+}
+
+div.validations span.author {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    width: 307px;
+    border: 0px;
+}

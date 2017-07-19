@@ -1,0 +1,21 @@
+* {
+    font-family: helvetica;
+}
+
+h1 {
+    font-size: 75px;
+    position: relative;
+    right: 30px;
+    bottom: 30px;
+}
+
+.wrapper {
+    display: inline-flex;
+    position: relative;
+    left: 80px;
+}
+
+.list {
+    position: relative;
+    left: 200px;
+}
